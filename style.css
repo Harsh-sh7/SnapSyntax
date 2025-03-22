@@ -1,0 +1,292 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+.header {
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    margin-right: 69px; /* Add gap between logo and nav */
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Menu - Centered */
+.nav {
+    flex: 1; /* Takes available space */
+    display: flex;
+    justify-content: center; /* Centers the list */
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+.text-box{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin-left: 230px;
+    /* margin-right: 150px; */
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+/* Random Text Box Styling */
+.random-text-box {
+    width: 70%; /* Adjust width for text-box effect */
+    padding: 15px 25px;
+     /* Inner spacing */
+    font-size: 26px;
+    color: #333; /* Dark text for readability */
+    border-radius: 8px; /* Rounded corners */
+    font-style: italic;
+    margin-left: 250px;
+}
+
+/* Page Layout */
+.container {
+    display: flex;
+    height: 100vh;
+    padding-top: 80px; /* Added padding to push content below the fixed header */
+}
+
+/* Left and Right Sections */
+.left, .right {
+    width: 15%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left img{
+    position: absolute;
+    bottom: 0;
+}
+
+/* Adjust Left Section to Avoid Overlap */
+.left {
+    margin-top: 20px; /* Ensures "Selected Works" does not collide with the header */
+}
+
+.middle {
+    width: 70%;
+    overflow-y: scroll;
+    padding: 20px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.middle::-webkit-scrollbar {
+    display: none;
+}
+
+/* Middle Content */
+.middle-content {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Scroll Section */
+.scroll-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Wrapper for text and image */
+.image-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Text Positioned Outside the Image */
+.text-overlay {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 150px;
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 55vh; /* Full height images */
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Image Styling - Full Height */
+.image-container img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Video Styling */
+.image-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Full-Width Image */
+.full-width-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.full-width-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: flex-start;
+    padding: 100px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.about1 {
+    flex: 0 0 40%;
+}
+
+.about1 h2 {
+    font-size: 36px;
+}
+
+.about2 {
+    flex: 0 0 55%;
+    font-size: 16px;
+    line-height: 1.8;
+}
+.about3 {
+    flex: 0 0 auto;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+}
+
+/* Footer */
+footer {
+    align-items: center;
+    text-align: center;
+    gap: 750px;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+footer .con{
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 240px;
+}
+body {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Change body background when hovering over each image-wrapper */
+body:has(.image-wrapper:nth-child(1):hover) {
+    background-color: #FFDAB9; /* Light Peach */
+}
+
+body:has(.image-wrapper:nth-child(2):hover) {
+    background-color: #E0FFFF; /* Light Cyan */
+}
+
+body:has(.image-wrapper:nth-child(3):hover) {
+    background-color: #FAFAD2; /* Light Goldenrod */
+}
+
+body:has(.image-wrapper:nth-child(4):hover) {
+    background-color: #D8BFD8; /* Light Purple */
+}
+
+body:has(.image-wrapper:nth-child(5):hover) {
+    background-color: #B0E0E6; /* Powder Blue */
+}
+
+body:has(.image-wrapper:nth-child(6):hover) {
+    background-color: #FFB6C1; /* Light Pink */
+}
+
+
+.header {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Change body background when hovering over each image-wrapper */
+.header:has(.image-wrapper:nth-child(1):hover) {
+    background-color: #FFDAB9; /* Light Peach */
+}
+
+.header:has(.image-wrapper:nth-child(2):hover) {
+    background-color: #E0FFFF; /* Light Cyan */
+}
+
+.header:has(.image-wrapper:nth-child(3):hover) {
+    background-color: #FAFAD2; /* Light Goldenrod */
+}
+
+.header:has(.image-wrapper:nth-child(4):hover) {
+    background-color: #D8BFD8; /* Light Purple */
+}
+
+.header:has(.image-wrapper:nth-child(5):hover) {
+    background-color: #B0E0E6; /* Powder Blue */
+}
+
+.header:has(.image-wrapper:nth-child(6):hover) {
+    background-color: #FFB6C1; /* Light Pink */
+}
